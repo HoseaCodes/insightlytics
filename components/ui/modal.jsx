@@ -3,7 +3,6 @@
 import { Dialog, DialogTitle, DialogDescription } from '@headlessui/react';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
-import win from 'global';
 
 export function Modal({ isOpen, onClose, event, onUpdateEvent }) {
   const [isComplete, setIsComplete] = useState(event?.completed || false);
