@@ -1,6 +1,6 @@
 // import {  Metadata } from "next";
 
-import { CheckCircleIcon } from "@heroicons/react/20/solid";
+// import { CheckCircleIcon } from "@heroicons/react/20/solid";
 
 // export const metadata: Metadata = {
 //   title: "Privacy Policy – Quakemap | Realtime Earthquakes",
@@ -56,7 +56,7 @@ export default function Privacy() {
             </p>
             <ul role="list" className="mt-8 space-y-8">
               <li className="flex gap-x-3">
-                <CheckCircleIcon
+                <span
                   aria-hidden="true"
                   className="mt-1 h-5 w-5 flex-none text-black dark:text-white"
                 />
@@ -70,7 +70,7 @@ export default function Privacy() {
                 </a>
               </li>
               <li className="flex gap-x-3">
-                <CheckCircleIcon
+                <span
                   aria-hidden="true"
                   className="mt-1 h-5 w-5 flex-none text-black dark:text-white"
                 />
@@ -84,7 +84,7 @@ export default function Privacy() {
                 </a>
               </li>
               <li className="flex gap-x-3">
-                <CheckCircleIcon
+                <span
                   aria-hidden="true"
                   className="mt-1 h-5 w-5 flex-none text-black dark:text-white"
                 />
@@ -99,7 +99,7 @@ export default function Privacy() {
                 </a>
               </li>
               <li className="flex gap-x-3">
-                <CheckCircleIcon
+                <span
                   aria-hidden="true"
                   className="mt-1 h-5 w-5 flex-none text-black dark:text-white"
                 />
@@ -152,28 +152,28 @@ export default function Privacy() {
             </p>
             <ul role="list" className="mt-8 space-y-8">
               <li className="flex gap-x-3">
-                <CheckCircleIcon
+                <span
                   aria-hidden="true"
                   className="mt-1 h-5 w-5 flex-none text-black dark:text-white"
                 />
                 <span>To facilitate our Service;</span>
               </li>
               <li className="flex gap-x-3">
-                <CheckCircleIcon
+                <span
                   aria-hidden="true"
                   className="mt-1 h-5 w-5 flex-none text-black dark:text-white"
                 />
                 <span>To provide the Service on our behalf;</span>
               </li>
               <li className="flex gap-x-3">
-                <CheckCircleIcon
+                <span
                   aria-hidden="true"
                   className="mt-1 h-5 w-5 flex-none text-black dark:text-white"
                 />
                 <span>To perform Service-related services; or</span>
               </li>
               <li className="flex gap-x-3">
-                <CheckCircleIcon
+                <span
                   aria-hidden="true"
                   className="mt-1 h-5 w-5 flex-none text-black dark:text-white"
                 />
