@@ -28,12 +28,20 @@ function formatStrategyData(type, month, text) {
 }
 
 export async function GET() {
-  await connectToDatabase();
-  const strategies = await SocialMediaStrategy.find();
-  return new Response(JSON.stringify(strategies), {
-    status: 200,
-    headers: { 'Content-Type': 'application/json' },
-  });
+  try {
+    await connectToDatabase();
+    const strategies = await SocialMediaStrategy.find();
+    return new Response(JSON.stringify(strategies), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    console.error('Error:', error.message);
+    return new Response(JSON.stringify({ error: `Failed to get strategies: ${error.message}` }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
 }
 
 export async function PATCH(req) {
