@@ -10,25 +10,15 @@ export default function PlaceForm({ onFetchBusinesses, setScrapedData }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const convertToLatLng = async (address) => {
+  const fetchLatLngFromApi = async (address) => {
     try {
-      const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-          address
-        )}&key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY}`
-      );
+      const response = await fetch(`/api/google/geocode?address=${encodeURIComponent(address)}`);
 
       if (!response.ok) {
         throw new Error("Failed to fetch geocode data");
       }
 
-      const data = await response.json();
-      console.log(data);
-      if (data.results.length === 0) {
-        throw new Error("No results found for the specified location");
-      }
-
-      const { lat, lng } = data.results[0].geometry.location;
+      const { lat, lng } = await response.json();
       return `${lat},${lng}`;
     } catch (error) {
       console.error("Error converting address to coordinates:", error);
@@ -42,7 +32,7 @@ export default function PlaceForm({ onFetchBusinesses, setScrapedData }) {
     try {
       setLoading(true);
       setError(null);
-      const latLng = await convertToLatLng(locationInput);
+      const latLng = await fetchLatLngFromApi(locationInput);
       setLocation(latLng);
       onFetchBusinesses(latLng, radius, type, keyword);
     } catch (error) {
