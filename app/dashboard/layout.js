@@ -45,9 +45,10 @@ export default function DashboardLayout({ children }) {
         <aside
           className={`${
             isSidebarOpen ? 'block' : 'hidden'
-          } md:flex md:flex-col w-64 bg-gray-800 text-white fixed md:static inset-y-0 left-0 z-10 transition-transform transform md:translate-x-0 ${
+          } md:flex md:flex-col w-64 bg-gray-800 text-white fixed md:sticky top-0 left-0 z-10 transition-transform transform md:translate-x-0 ${
             isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
+          style={{ height: '100vh' }} // Ensures the sidebar takes the full viewport height
         >
           <div className="p-4 text-lg font-semibold">Dashboard</div>
           <nav>
@@ -55,10 +56,8 @@ export default function DashboardLayout({ children }) {
               <SidebarItem href="/dashboard" title="Home" />
               <SidebarItem href="/dashboard/strategy" title="Strategy" />
               <SidebarItem href="/dashboard/calendar" title="Calendar" />
-              <SidebarItem
-                href="/dashboard/calendar/instagram/post"
-                title="Instagram"
-              />
+              <SidebarItem href="/dashboard/leads" title="Leads Gen" />
+              <SidebarItem href="/dashboard/instagram/post" title="Instagram" />
             </ul>
           </nav>
         </aside>
